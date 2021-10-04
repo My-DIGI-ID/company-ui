@@ -1,0 +1,117 @@
+<!--
+  ~ Copyright 2021 Bundesrepublik Deutschland
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="bx--grid">
+  <div class="bx--row justify-content-center">
+    <div ibmCol [columnNumbers]="{'lg': 3, 'md': 3, 'sm': 8}">
+      <div>
+        <h3 class="layout-mt-7">{{"login-component.login" | translate}}</h3>
+        <p class="font-size-01">{{"login-component.login-with-employee-id" | translate}}</p>
+      </div>
+      <hr>
+      <form [formGroup]="loginForm" class="wrapper" (ngSubmit)="login()">
+        <div *ngIf="loginForm.get('username'); let formControl"
+             data-text-input
+             class="bx--form-item bx--text-input-wrapper space-mt-5">
+          <label for="username" class="bx--label">{{"login-component.continue-with-employee-id" | translate}}</label>
+          <div [attr.data-invalid]="formValidator.isFormControlInvalidAfterTouch(formControl)"
+               class="bx--text-input__field-wrapper">
+            <div *ngIf="formValidator.isFormControlInvalidAfterTouch(formControl)">
+              <svg ibmIconWarningFilled class="bx--text-input__invalid-icon" size="16"></svg>
+            </div>
+            <input id="username"
+                   maxlength="200"
+                   formControlName="username"
+                   type="text"
+                   class="bx--text-input"
+                   placeholder="mitarbeiter@firma.de"
+                   autocomplete="on"
+                   required
+                   appAutofocus
+                   [ngClass]="{'bx--text-input--invalid': formValidator.isFormControlInvalidAfterTouch(formControl)}">
+          </div>
+          <div *ngIf="formValidator.isFormControlInvalidAfterTouch(formControl)"
+               class="bx--form-requirement">
+            <div id="error-username-field-is-required" [hidden]="!formControl.hasError('required')">
+              {{"login-component.error.required.username" | translate}}
+            </div>
+            <div id="error-username-forbidden-characters" [hidden]="!(formControl.hasError('containsWhitespace'))">
+              {{"login-component.error.forbidden-characters.username" | translate}}
+            </div>
+          </div>
+        </div>
+        <div *ngIf="loginForm.get('password'); let formControl"
+             data-text-input
+             class="bx--form-item bx--text-input-wrapper bx--password-input-wrapper space-mt-5">
+          <label for="password" class="bx--label">{{"login-component.password" | translate}}</label>
+          <div [attr.data-invalid]="formValidator.isFormControlInvalidAfterTouch(formControl)"
+               class="bx--text-input__field-wrapper">
+            <div *ngIf="formValidator.isFormControlInvalidAfterTouch(formControl)">
+              <svg ibmIconWarningFilled class="bx--text-input__invalid-icon" size="16"></svg>
+            </div>
+            <input id="password"
+                   maxlength="200"
+                   formControlName="password"
+                   [type]="passwordInputValueHidden ? 'password' : 'text'"
+                   class="bx--text-input bx--password-input"
+                   autocomplete="off"
+                   required
+                   data-toggle-password-visibility
+                   [ngClass]="{'bx--text-input--invalid': formValidator.isFormControlInvalidAfterTouch(formControl)}">
+            <div *ngIf="passwordInputValueHidden"
+                 (click)="togglePasswordVisibility()"
+                 class="password-button-background-fix bx--text-input--password__visibility__toggle bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center">
+              <span class="bx--assistive-text">{{"login-component.show-password" | translate}}</span>
+              <svg ibmIconView class="bx--icon--visibility-on" size="16"></svg>
+            </div>
+            <div *ngIf="!passwordInputValueHidden"
+                 (click)="togglePasswordVisibility()"
+                 class="password-button-background-fix bx--text-input--password__visibility__toggle bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center">
+              <span class="bx--assistive-text">{{"login-component.hide-password" | translate}}</span>
+              <svg ibmIconViewOff class="bx--icon--visibility-off" size="16"></svg>
+            </div>
+          </div>
+          <div *ngIf="formValidator.isFormControlInvalidAfterTouch(formControl)" class="bx--form-requirement">
+            <div id="error-password-field-is-required" [hidden]="!formControl.hasError('required')">
+              {{"login-component.error.required.password" | translate}}
+            </div>
+            <div id="error-password-forbidden-characters" [hidden]="!(formControl.hasError('containsWhitespace'))">
+              {{"login-component.error.forbidden-characters.password" | translate}}
+            </div>
+            <div id="error-login-attempt-failed" [hidden]="!formControl.hasError('credentialsError')">
+              {{"login-component.error.credentials" | translate}}
+            </div>
+          </div>
+        </div>
+        <div class="bx--form-item space-mt-5">
+          <button id="login-button"
+                  class="bx--btn bx--btn--primary align-self-stretch"
+                  type="submit"
+                  [disabled]="loginForm.invalid">
+            {{"login-component.login" | translate}}
+            <svg ibmIconArrowRight class="bx--btn__icon" size="16"></svg>
+          </button>
+        </div>
+      </form>
+      <hr>
+      <div>
+        <p class="font-size-01">{{"login-component.need-help" | translate}}
+          <a routerLink ibmLink (click)="showContactModal()">{{"login-component.contact" | translate}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

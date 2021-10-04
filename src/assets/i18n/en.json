@@ -1,0 +1,192 @@
+{
+  "login-component": {
+    "login": "Login",
+    "login-with-employee-id": "Please login with your Employee ID.",
+    "continue-with-employee-id": "Continue with Employee ID",
+    "password": "Password",
+    "show-password": "Show password",
+    "hide-password": "Hide password",
+    "error": {
+      "required": {
+        "username": "Username field is required!",
+        "password": "Password field is required!"
+      },
+      "forbidden-characters": {
+        "username": "Username can't contain whitespace!",
+        "password": "Password can't contain whitespace!"
+      },
+      "credentials": "Incorrect username or password. Please try again."
+    },
+    "need-help": "Need help?",
+    "contact": "Contact"
+  },
+  "contact-modal": {
+    "contact": "Contact",
+    "contact-support-team": "If you have any problems with the application, please contact our support.",
+    "tel": "Tel",
+    "email": "E-Mail"
+  },
+  "dashboard-component": {
+    "manage-invitations": {
+      "title": "Manage Invitations",
+      "description": "This function allows you to create or remove invitations for employees to create their personal corporate credential.",
+      "button": "Manage Invitations"
+    },
+    "manage-issued-credentials": {
+      "title": "Manage Issued Credentials",
+      "description": "This function allows you to see the list of employee credentials that were issued. It also provides the possibility to revoke credentials (e.g. the employee has left the company).",
+      "button": "Manage Issued Credentials"
+    },
+    "image-description": {
+      "badge": "Show Badge pictogram",
+      "web-developer": "Show Developer pictogram"
+    }
+  },
+  "footer-component": {
+    "give-us": "Give us",
+    "feedback": "Feedback",
+    "version": "version"
+  },
+  "header-component": {
+    "image-description": {
+      "company-logo": "company-logo"
+    }
+  },
+  "manage-invitation-overview-component": {
+    "table-title": "Manage Invitations",
+    "table-description": "This list shows all invitations not yet accepted by employees.",
+    "table-action-menu": {
+      "delete": "Delete",
+      "download": "Download Email"
+    },
+    "table": {
+      "empty-table-message": "No pending invitations",
+      "first-name": "First name",
+      "last-name": "Last Name",
+      "email": "E-Mail",
+      "id": "ID"
+    },
+    "warning-modal": {
+      "title": "Please confirm deletion of this invitation",
+      "modal-text": "Are you sure you want to remove this invitation from the list?",
+      "button": {
+        "cancel": "Cancel",
+        "confirm": "Delete"
+      }
+    },
+    "button": {
+      "add-button": "Create Invitation"
+    }
+  },
+  "credential-form-component": {
+    "create-invitation": "Create invitation",
+    "first-name": "Name",
+    "last-name": "Last name",
+    "email": "E-Mail",
+    "id": "ID",
+    "company-name": "Company name",
+    "company-subject": "Company subject",
+    "company-address": "Company address",
+    "company-zip-code": "Company zip code",
+    "company-city": "Company city",
+    "button": {
+      "discard": "Discard",
+      "submit": "Submit"
+    },
+    "error": {
+      "required": {
+        "first-name": "First name field is required!",
+        "last-name": "Last name field is required!",
+        "email": "E-mail is required!",
+        "id": "ID field is required!",
+        "company-name": "Company name field is required!",
+        "company-address": "Company address field is required!",
+        "company-zip-code": "Company zip code field is required!",
+        "company-city": "Company city field is required!"
+      },
+      "size": {
+        "first-name": "Maximum size of First Name is {{number}} characters!",
+        "last-name": "Maximum size of Last Name is {{number}} characters!",
+        "email": "Email before '@' can have maximum size of {{number}} characters!",
+        "id": "Maximum size of ID is {{number}} characters!",
+        "company-name": "Maximum size of Company Name is {{number}} characters!",
+        "company-subject": "Maximum size of Company Subject is {{number}} characters!",
+        "company-address": "Maximum size of Company Address is {{number}} characters!",
+        "company-zip-code": "Maximum size of Company Zip Code is {{number}} characters!",
+        "company-city": "Maximum size of Company City is {{number}} characters!"
+      },
+      "forbidden-characters": {
+        "first-name": "First name can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "last-name": "Last name can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "id": "ID can only contain letters, numbers and the following symbols: _ - .",
+        "company-name": "Company name can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "company-subject": "Company subject can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "company-address": "Company address can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "company-zip-code": "Company zip code can only contain letters, numbers, whitespace and the following symbols: _ . & -",
+        "company-city": "Company city can only contain letters, numbers, whitespace and the following symbols: _ . & -"
+      },
+      "not-unique": {
+        "id": "Credential with the given ID already exists."
+      },
+      "invitation-already-accepted": "An invitation for the given credential id has already been accepted.",
+      "format": {
+        "email": "Invalid e-mail format!"
+      }
+    }
+  },
+  "manage-issued-credentials-component": {
+    "table-title": "Manage Issued Credentials",
+    "table-description": "Select from existing credentials to revoke them.",
+    "empty-table-message": "No issued credentials",
+    "table": {
+      "id": "ID",
+      "revoke": "Revoke",
+      "issue-date": "Issue Date"
+    },
+    "warning-modal": {
+      "revoke": {
+        "title": "Revoke credential",
+        "modal-text": "Do you really want to revoke this employee's credential?",
+        "button": {
+          "cancel": "Cancel",
+          "confirm": "Revoke"
+        }
+      }
+    }
+  },
+  "table-component": {
+    "search": "Search",
+    "delete": "Delete",
+    "download-email": "Download E-Mail",
+    "revoke": "Revoke",
+    "empty-table-message": "No data has been received.",
+    "header": {
+      "first-name": "First name",
+      "last-name": "Last name"
+    }
+  },
+  "feedback-modal": {
+    "feedback": "Feedback",
+    "topic": "Topic",
+    "topics": {
+      "issue": "Issue",
+      "comment": "Comment",
+      "question": "Question"
+    },
+    "choose-option": "Choose an option",
+    "write-your-feedback-here": "Write your feedback here...",
+    "error": {
+      "required": "Topic field is required!",
+      "size": "Feedback should be between 15 and 500 characters!"
+    },
+    "button": {
+      "discard": "Discard",
+      "submit": "Submit"
+    }
+  },
+  "page-not-found-component": {
+    "page-not-found": "Page not found.",
+    "go-back": "Go back to the home page"
+  },
+  "error-notification": "Something went wrong, please try again."
+}

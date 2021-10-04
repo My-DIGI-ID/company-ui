@@ -1,0 +1,44 @@
+<!--
+  ~ Copyright 2021 Bundesrepublik Deutschland
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div ibmGrid class="space-mt-14 space-ml-9 space-mr-9">
+  <div ibmRow>
+    <div ibmCol class="space-mr-15">
+      <img src="assets/pictograms/id--badge.svg" class="pictogram" alt="{{'dashboard-component.image-description.badge' | translate}}">
+      <h4 class="space-mt-5 space-mb-5">{{"dashboard-component.manage-invitations.title" | translate}}</h4>
+      <p>{{"dashboard-component.manage-invitations.description" | translate}}</p>
+    </div>
+    <div ibmCol>
+      <img src="assets/pictograms/web--developer.svg" class="pictogram" alt="{{'dashboard-component.image-description.web-developer' | translate}}">
+      <h4 class="space-mt-5 space-mb-5">{{"dashboard-component.manage-issued-credentials.title" | translate}}</h4>
+      <p>{{"dashboard-component.manage-issued-credentials.description" | translate}}</p>
+    </div>
+  </div>
+  <div ibmRow>
+    <div ibmCol class="space-mt-8 space-mr-15">
+      <button class="space-mb-3" ibmButton="primary" id="manage-invitation-button" (click)="showManageInvitation()">
+        {{"dashboard-component.manage-invitations.button" | translate}}
+        <svg class="bx--btn__icon" ibmIconArrowRight size="16"></svg>
+      </button>
+    </div>
+    <div ibmCol class="space-mt-8">
+      <button class="space-mb-3" ibmButton="primary" id="manage-issued-credentials-button" (click)="navigateToManageIssuedCredentialsPage()">
+        {{"dashboard-component.manage-issued-credentials.button" | translate}}
+        <svg class="bx--btn__icon" ibmIconArrowRight size="16"></svg>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+0.0.17
+--------------------------------------------------------------------------------
+Removal of the admin login hardcoded configuration Values
+(Check the Affected configuration section for the impacted fields in the configuration file).
+Validation changes for the Not Null and Not empty fields for the CSV uploads.
+CSV upload - New Validation and display of the error message.
+
+0.0.16
+--------------------------------------------------------------------------------
+Refactoring the code and the carbon changes.
+Text display on the table while hover over and text changes on Overflow menu.
+Update on the reissue credentials issues.
+
+0.0.15
+--------------------------------------------------------------------------------
+Allowing the German ẞ and Space (special characters) while creating the invitation for the employee id.
+New Employee ID has to be unique to ID of already existing employees
+Functional changes of Credential component	company-ui
+Download email invitation (it is taken from the MongoDB now instead of using a hardcoded email template file)
+BUGS
+Fix sorting of a table by specific column
+
+0.0.14
+--------------------------------------------------------------------------------
+Refactoring the code of the create invitation components.
+Update the manage invitation table changes with respect to the changes done on the BWI.
+BUGS
+Allowing the character = in the password field.
+Fixing the issue of the download invitation email.
+
+0.0.13
+--------------------------------------------------------------------------------
+Change the Regex in order to cover also upper case German special characters.
+Error during editing hotel and user.
+Upgrade Carbon version.
+Internationalization of the hardcoded texts, get the text from JSON files.
+BUGS
+500 error on Hotel controller.
+Date of expiry is null.
+AFFECTED config params
+Carbon upgrade: If this persists delete your node_modules and your package-lock.json and do an npm install and rebuild the app so it can pick up the new carbon version.
+Reconfigure the endpoints in order to point to the new test/demo Ledger. Also, to correlate with the new version of the Wallet ID app (v 1.3)
+
+0.0.12
+--------------------------------------------------------------------------------
+Session tokens' storage changed, added httponly secure cookies.
+Trivial passwords cannot be set for hotel users: all passwords have to comply with a password policy.
+URL of the QR-code is configurable through an environment variable.
+Release version is shown in the footer.
+Solved keystore exposure in open source github.
+
+0.0.11
+--------------------------------------------------------------------------------
+Changed ENV variable for the Agent container to have more flexibility to access to the tails-server.
+  Prev:
+      SSIBK_COMPANY_AGENT_TAILS_SERVER_IP_ADDRESS=${IP_ADDRESS}
+      SSIBK_COMPANY_AGENT_TAILS_SERVER_PORT=6543
+  Currently:
+      SSIBK_COMPANY_AGENT_TAILS_SERVER_ENDPOINT=http://${IP_ADDRESS}:6543
+Search and pagination in tables
+Add support number and e-mail to contact modal
+Refactoring of the notification service
+Add SQL inject regex validation
+BUGS
+Hide password icon the same as show password icon
+Increase firm name attribute max size to 100
+
+0.0.10
+--------------------------------------------------------------------------------
+Create 404 page
+Added new ENV variable to select the spring profile during container initialisation. E.g.
+SPRING_PROFILES_ACTIVE=prod for production environment
+Create Error notification service
+Added field validation against forbidden characters
+All notifications are being created as toasts messages
+several frontend improvements
+
+0.0.9
+--------------------------------------------------------------------------------
+Add autofocus on input fields
+BUGS
+Company UI: Navigate to list after creating an invitation manually (using the form)
+Company-UI: Add Logged in Guard
+company-ui: company subject input field should be optional
+
+Company-UI: Sanitize input data
+
+Finalise readme
+Fix company-ui failing build because of wrong import
+Rename methods and input parameters in "Manage invitation component" for consistency
+
+0.0.8
+--------------------------------------------------------------------------------
+Add autofocus on input fields
+BUGS
+Company UI: Navigate to list after creating an invitation manually (using the form)
+Company-UI: Add Logged in Guard
+company-ui: company subject input field should be optional
+
+Company-UI: Sanitize input data
+
+Finalise readme
+Fix company-ui failing build because of wrong import
+Rename methods and input parameters in "Manage invitation component" for consistency
+
+0.0.7
+--------------------------------------------------------------------------------
+BUGS
+In company ui, the search for the "manage issued credentials" is not ignoring case and is missing clearSearch() function
+Tails server bug regarding misconfiguration (port parameter)
+When creating an invitation for an employee on the frontend email is always null
+
+0.0.6
+--------------------------------------------------------------------------------
+Company
+footer where users can submit feedback
+navigate to list after creating an invitation manually (using the form)
+BUGS
+build clarifier proof for corporateID based on credDefIds instead of schema ids	?
+when creating a user it gives them authorities, when we update a user the authorities should not disappear	company-controller
+resending a credential results in 200 with no new data or 404 when connection has been deleted
+
+Company-Controller
+company subject input field should be optional
+when creating an invitation for an employee on the frontend email is always null
+
